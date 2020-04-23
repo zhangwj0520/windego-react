@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 // eslint-disable-next-line import/no-cycle
-import { AppThunk, RootState } from '@store/index'
+import { RootState } from '@store/index'
 
 const initialState: IUserInfo = {
   user_id: '',
@@ -20,8 +20,7 @@ export const slice = createSlice({
   name: 'userInfo',
   initialState,
   reducers: {
-    setUserInfo: (state, action: PayloadAction<IUserInfo>) => {
-      const { type, payload } = action
+    setUserInfo: (state, { payload }: PayloadAction<IUserInfo>) => {
       Object.entries(payload).forEach((item) => {
         const [key, val] = item
         state[key] = val

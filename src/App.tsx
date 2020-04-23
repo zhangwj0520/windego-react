@@ -7,12 +7,12 @@ import { useStore, useDispatch } from '@hooks/useStore'
 
 import Login from '@pages/login'
 import LogRocket from 'logrocket'
-// import setupLogRocketReact from 'logrocket-react'
+import setupLogRocketReact from 'logrocket-react'
 
 // after calling LogRocket.init()
-// setupLogRocketReact(LogRocket)
 
 LogRocket.init('mo2kks/cra-app')
+setupLogRocketReact(LogRocket)
 
 // LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
 //   name: 'James Morrison',
@@ -31,7 +31,7 @@ const Root = () => {
       dispatch(setUserInfo(data))
     }
     getInitData()
-  })
+  }, [dispatch])
 
   return (
     <Router>

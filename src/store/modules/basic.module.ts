@@ -45,10 +45,9 @@ export const slice = createSlice({
       cacheStorage.set('fixSiderbar', payload)
       state.fixSiderbar = payload
     },
-    onCollapse: (state) => {
-      const collapsed = !state.collapsed
-      cacheStorage.set('collapsed', collapsed)
-      state.collapsed = collapsed
+    onCollapse: (state, { payload }: any) => {
+      cacheStorage.set('collapsed', payload)
+      state.collapsed = payload
     },
     login: (state) => {
       cacheStorage.set('isLogin', true)

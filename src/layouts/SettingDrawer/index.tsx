@@ -1,18 +1,10 @@
 import React, { useState } from 'react'
-import { Drawer, Button, Divider, Switch, List, Tooltip } from 'antd'
-import { useSelector, useDispatch } from 'react-redux'
+import { Drawer, Divider, Switch, List, Tooltip } from 'antd'
 import { CloseOutlined, SettingOutlined } from '@ant-design/icons'
-import {
-  onChangeLayout,
-  onChangeTheme,
-  SiderTheme,
-  onChangeFixedHeader,
-  onChangeFixSiderbar,
-} from '@store/modules/basic.module'
-import { useStore } from '@hooks/useStore'
+import { onChangeFixedHeader, onChangeFixSiderbar } from '@store/modules/basic.module'
+import { useStore, useDispatch } from '@hooks/useStore'
 import NavTheme from './NavTheme'
 import ThemeColor from './ThemeColor'
-import styles from './styles.scss'
 
 interface BodyProps {
   title: string
@@ -47,7 +39,7 @@ export const renderLayoutSettingItem = (item: SettingItemProps) => {
 const SettingDrawer = () => {
   const [show, setShow] = useState(false)
   const dispatch = useDispatch()
-  const { layout, theme, fixedHeader, fixSiderbar } = useStore('basic')
+  const { fixedHeader, fixSiderbar } = useStore('basic')
   return (
     <Drawer
       visible={show}

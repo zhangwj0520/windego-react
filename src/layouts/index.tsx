@@ -5,7 +5,7 @@ import { getDocumentTitle } from '@utils/routeUtils'
 import { Link } from 'react-router-dom'
 import WaterMark from '@components/WaterMark'
 import logo from '@assets/images/logo.png'
-import { useStore, useDispatch, useActions } from '@hooks/useStore'
+import { useStore, useDispatch } from '@hooks/useStore'
 import { onCollapse } from '@store/modules/basic.module'
 
 import menuData from '@routes/route.config'
@@ -32,7 +32,7 @@ function Index() {
         layout={layout}
         logo={logo}
         collapsed={collapsed}
-        onCollapse={() => dispatch(onCollapse())}
+        onCollapse={(val) => dispatch(onCollapse(val))}
         iconfontUrl="//at.alicdn.com/t/font_1721886_67j8vlmn6vq.js"
         navTheme={theme}
         contentStyle={{ margin: 12 }}

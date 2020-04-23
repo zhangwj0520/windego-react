@@ -1,10 +1,9 @@
 import React from 'react'
 
 import { Tooltip } from 'antd'
-import { useSelector, useDispatch } from 'react-redux'
 import { CheckOutlined } from '@ant-design/icons'
-import { onChangeLayout, onChangeTheme, SiderTheme, LayoutType } from '@store/modules/basic.module'
-import { useStore } from '@hooks/useStore'
+import { onChangeLayout, LayoutType } from '@store/modules/basic.module'
+import { useStore, useDispatch } from '@hooks/useStore'
 
 type List = {
   title: string
@@ -16,7 +15,7 @@ const baseClassName = 'ant-pro-setting-drawer-block-checbox'
 
 const BlockCheckbox = () => {
   const dispatch = useDispatch()
-  const { layout, theme } = useStore('basic')
+  const { layout } = useStore('basic')
 
   const list: List[] = [
     {

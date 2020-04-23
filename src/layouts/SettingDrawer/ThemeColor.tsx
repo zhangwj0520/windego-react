@@ -3,8 +3,8 @@ import React from 'react'
 import { Tooltip } from 'antd'
 import { CheckOutlined } from '@ant-design/icons'
 import { useStore } from '@hooks/useStore'
-import { SiderTheme, onChangeTheme, LayoutType } from '@store/modules/basic.module'
-import { useSelector, useDispatch } from 'react-redux'
+import { SiderTheme, onChangeTheme } from '@store/modules/basic.module'
+import { useDispatch } from 'react-redux'
 
 type List = {
   title: string
@@ -16,7 +16,7 @@ const baseClassName = 'ant-pro-setting-drawer-block-checbox'
 
 const BlockCheckbox = () => {
   const dispatch = useDispatch()
-  const { layout, theme } = useStore('basic')
+  const { theme } = useStore('basic')
   const list: List[] = [
     {
       key: 'light',

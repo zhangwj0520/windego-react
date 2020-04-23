@@ -67,7 +67,7 @@ const TopHeader: React.FC = () => {
             <Icon
               className={styles.trigger}
               type={`icon-${collapsed ? 'menu-unfold' : 'menu-fold'}`}
-              onClick={() => dispatch(onCollapse())}
+              onClick={(val) => dispatch(onCollapse(val))}
             />
           </div>
         </Col>
@@ -76,7 +76,7 @@ const TopHeader: React.FC = () => {
             <Icon
               className={styles.trigger}
               type={`icon-${collapsed ? 'menu-unfold' : 'menu-fold'}`}
-              onClick={() => dispatch(onCollapse())}
+              onClick={(val) => dispatch(onCollapse(val))}
             />
           </div>
         </Col>
