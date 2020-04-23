@@ -7,6 +7,7 @@ import { useStore, useDispatch } from '@hooks/useStore'
 
 import Login from '@pages/login'
 
+console.log(11)
 const Root = () => {
   const dispatch = useDispatch()
   const { isLogin } = useStore('basic')
