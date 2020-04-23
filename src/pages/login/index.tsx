@@ -111,7 +111,7 @@ function Login(props: Props) {
         }}
       />
       <div className={styles.content}>
-        <div className={styles.title}>后台管理系统</div>
+        <div className={styles.title}>后台管理系统1</div>
         <Form className="login-form" onFinish={onFinish} form={form}>
           <FormItem name="userName" rules={rules.userName}>
             <Input
