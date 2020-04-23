@@ -7,6 +7,8 @@ import WaterMark from '@components/WaterMark'
 import logo from '@assets/images/logo.png'
 import { useStore, useDispatch } from '@hooks/useStore'
 import { onCollapse } from '@store/modules/basic.module'
+import { getUserInfo } from '@layouts/api'
+import { setUserInfo } from '@src/store/modules/userInfo.module'
 
 import menuData from '@routes/route.config'
 import SettingDrawer from './SettingDrawer'
@@ -23,6 +25,14 @@ function Index() {
   useEffect(() => {
     document.title = `React-${getDocumentTitle(pathname)}`
   }, [pathname])
+
+  useEffect(() => {
+    const getInitData = async () => {
+      const data = await getUserInfo()
+      dispatch(setUserInfo(data))
+    }
+    getInitData()
+  }, [dispatch])
 
   return (
     <>
