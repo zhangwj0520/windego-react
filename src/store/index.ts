@@ -1,7 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@reduxjs/toolkit'
 import logger from 'redux-logger'
-import LogRocket from 'logrocket'
 
 import { combineReducers, Reducer, ReducersMapObject } from 'redux'
 
@@ -24,7 +23,7 @@ function makeRootReducer<A, M extends ReducersMapObject<A>>(reducers?: M) {
 
 const store = configureStore({
   reducer: makeRootReducer(),
-  middleware: [...getDefaultMiddleware(), LogRocket.reduxMiddleware(), logger] as const,
+  middleware: [...getDefaultMiddleware(), logger] as const,
 })
 
 export const injectReducer = (name: string, reducer: Reducer) => {

@@ -4,12 +4,9 @@ import { Layout, BackTop } from 'antd'
 import { getDocumentTitle } from '@utils/routeUtils'
 import WaterMark from '@components/WaterMark'
 
-import LogRocket from 'logrocket'
 import Header from './Header'
 import SideMenu from './SideMenu'
 import MainContent from './MainContent'
-
-LogRocket.init('mo2kks/react-app')
 
 function Index() {
   const { pathname } = useLocation()

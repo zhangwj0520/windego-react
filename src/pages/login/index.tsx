@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import Particles from 'react-particles-js'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Input, Button, Form, Checkbox } from 'antd'
+import { Input, Button, Form, Checkbox, message } from 'antd'
 import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 
@@ -75,6 +75,8 @@ function Login(props: Props) {
   }
 
   const onFinish = (values: object) => {
+    console.log(values)
+    // message.success(values.userName)
     dispatch(login())
     // // 模拟生成一些数据
     // this.props.setUserInfo(

@@ -54,14 +54,6 @@ function Index() {
         <WaterMark />
       </BasicLayout>
       <SettingDrawer />
-
-      {/* <SettingDrawer
-        settings={defaultSettings}
-        onSettingChange={onSettingChange}
-        hideHintAlert
-        hideLoading
-        hideColors
-      /> */}
     </>
   )
 }

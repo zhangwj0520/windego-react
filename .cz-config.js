@@ -42,8 +42,8 @@ module.exports = {
     },
   ],
   scopes: [
-    'components',
     'pages',
+    'components',
     'routes',
     'dependencies',
     'assets',

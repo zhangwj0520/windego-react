@@ -1,25 +1,18 @@
-.content {
-  position: relative;
-  // height: 100%;
-  // padding: 32px 40px;
-  overflow-y: auto;
-  border-radius: 2px;
-  background: #fff;
+:global {
+  .fade-enter {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
 
-  :global {
-    .ant-menu-submenu-title {
-      padding-left: 0 !important;
+  .fade-enter-active,
+  .fade-exit-active {
+    opacity: 1;
+    transition: all 500ms ease-out;
+    transform: translateX(0);
+  }
 
-      &:hover {
-        background: #eceae9 !important;
-      }
-    }
-
-    .ant-menu-submenu {
-      ul {
-        width: 100% !important;
-        min-width: 100% !important;
-      }
-    }
+  .fade-exit {
+    opacity: 0;
+    transform: translateX(30px);
   }
 }

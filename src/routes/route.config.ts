@@ -1,9 +1,8 @@
-import { lazy } from 'react'
-
 import loadable from '@utils/loadable'
 
 import RouteConfig from '@routes/route.types'
 import demoRoutes from '@routes/demos.route'
+import commonRoutes from '@routes/common.roue'
 // import AUTH_MAP from '@constants/auth';
 
 const routes: Array<RouteConfig> = [
@@ -12,7 +11,8 @@ const routes: Array<RouteConfig> = [
     name: '首页',
     exact: true,
     icon: 'icon-home',
-    component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@pages/welcome')),
+    component: loadable('welcome'),
+    // component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@pages/welcome')),
   },
   {
     path: '/business',
@@ -78,6 +78,7 @@ const routes: Array<RouteConfig> = [
   //     },
   //   ],
   // },
+  ...commonRoutes,
   ...(process.env.$OMIT_DEMO ? demoRoutes : []),
 ]
 

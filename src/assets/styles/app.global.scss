@@ -1,21 +1,3 @@
-/* 路由过渡效果 */
-.fade-enter {
-  opacity: 0;
-  transform: translateX(-30px);
-}
-
-.fade-enter-active,
-.fade-exit-active {
-  opacity: 1;
-  transition: all 500ms ease-out;
-  transform: translateX(0);
-}
-
-.fade-exit {
-  opacity: 0;
-  transform: translateX(30px);
-}
-
 .icon {
   width: 1em;
   height: 1em;
