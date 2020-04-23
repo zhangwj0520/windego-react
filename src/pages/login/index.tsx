@@ -1,14 +1,13 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import Particles from 'react-particles-js'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
-import { Input, Button, Form, Checkbox, message } from 'antd'
+import { Input, Button, Form, Checkbox } from 'antd'
 import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 
 import { isEmpty } from 'lodash'
-import cacheStorage from '@utils/localstorageExpires'
 import { login } from '@store/modules/basic.module'
-import { useStore, useActions } from '@hooks/useStore'
+import { useStore } from '@hooks/useStore'
 import styles from './login.scss'
 
 // import { login } from './module'
@@ -131,7 +130,7 @@ function Login(props: Props) {
               <Checkbox style={{ color: '#fff' }}>Remember me</Checkbox>
             </Form.Item>
 
-            <a className={styles.forgot} href="">
+            <a className={styles.forgot} href="/regist">
               Forgot password
             </a>
           </Form.Item>
