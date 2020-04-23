@@ -6,9 +6,9 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,16 +19,32 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-   # 使用node12
-  - name: Use Node.js 12.x
-    uses: actions/setup-node@v1
-    with:
-      node-version: 12.x
-   # 使用node12
-  - name: Use Node.js 12.x
-    uses: actions/setup-node@v1
-    with:
-      node-version: 12.x
+      # 使用node12
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      # yarn install
+      - name: yarn install,build
+        run: |
+          yarn
+          yarn build
+        env:
+          CI: true
+      # 只是阿里云oss的 id/secret,存储到github的secrets 中
+      # 我们可以去GitHub的市场上寻找别人写好的Action。ns
+      - name: setup aliyun oss
+        uses: manyuanrong/setup-ossutil@v1.0
+        with:
+          endpoint: oss-cn-beijing.aliyuncs.com
+          access-key-id: ${{ secrets.OSS_KEY_ID }}
+          access-key-secret: ${{ secrets.OSS_KEY_SECRET }}
+      # 先删除旧文件,在上传新文件
+      - name: cp files to aliyun
+        run: |
+          ossutil rm  -rf oss://react-ts/
+          ossutil cp -rf build oss://react-ts/
