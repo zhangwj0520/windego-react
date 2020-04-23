@@ -5,12 +5,9 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import RouteConfig from '@routes/route.types'
 import menus from '@routes/route.config'
-
 import Icon from '@components/Icon'
-
 import logo from '@assets/images/logo.png'
-
-import { name, selectCollapsed, changeCollapsed } from '@src/store/modules/basic.module'
+import { name, selectCollapsed, onCollapse } from '@src/store/modules/basic.module'
 
 import styles from './styles.scss'
 

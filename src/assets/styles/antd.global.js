@@ -1,16 +1,23 @@
+const { getThemeVariables } = require('antd/dist/theme')
+
+const theme = getThemeVariables({
+  // dark: true, // 开启暗色主题
+  compact: true, // 开启紧凑主题
+})
+
 module.exports = {
-  // '@primary-color': '#f52d29',
-  // '@success-color': '#2264E1',
-  // '@heading-color': '#0f0f0f',
-  // '@text-color': '#6f6f6f',
-  // '@text-color-secondary': '#999999',
-  // '@menu-bg': '#F0F3F5',
-  // '@menu-item-color': '#6F6F6F',
-  // '@menu-item-active-bg': 'rgba(223, 230, 235, 0.5)',
-  // '@menu-item-group-title-color': '#0F0F0F',
-  // '@table-header-bg': '#F6F8FA',
-  // '@layout-header-background': '#FFFFFF',
-  // '@btn-default-color': '#F52D29',
-  // '@btn-default-border': '#F52D29',
-  // '@border-radius-base': '4px',
-};
+  ...theme,
+  '@primary-color': '#1890ff', // 全局主色
+  '@link-color': '#1890ff', // 链接色
+  '@success-color': '#52c41a', // 成功色
+  '@warning-color': '#faad14', // 警告色
+  '@error-color': '#f5222d', // 错误色
+  '@font-size-base': '14px', // 主字号
+  '@heading-color': 'rgba(0, 0, 0, 0.85)', // 标题色
+  '@text-color': 'rgba(0, 0, 0, 0.65)', // 主文本色
+  '@text-color-secondary': 'rgba(0, 0, 0, 0.45)', // 次文本色
+  '@disabled-color': 'rgba(0, 0, 0, 0.25)', // 失效色
+  '@border-radius-base': '4px', // 组件/浮层圆角
+  '@border-color-base': '#d9d9d9', // 边框色
+  '@box-shadow-base': '0 2px 8px rgba(0, 0, 0, 0.15)', // 浮层阴影
+}

@@ -25,3 +25,4 @@ export function useStore<T>(name: name): T {
     return state[name]
   })
 }
+export { useDispatch, useSelector }

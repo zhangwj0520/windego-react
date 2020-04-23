@@ -2,12 +2,8 @@ import React, { useEffect } from 'react'
 import { Switch, BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import App from '@layouts/index'
 import { getUserInfo } from '@layouts/api'
-
-import { useDispatch } from 'react-redux'
-
 import { setUserInfo } from '@src/store/modules/userInfo.module'
-import cacheStorage from '@utils/localstorageExpires'
-import { useStore, useActions } from '@hooks/useStore'
+import { useStore, useDispatch } from '@hooks/useStore'
 
 import Login from '@pages/login'
 import LogRocket from 'logrocket'
@@ -18,13 +14,13 @@ import LogRocket from 'logrocket'
 
 LogRocket.init('mo2kks/cra-app')
 
-LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
-  name: 'James Morrison',
-  email: 'jamesmorrison@example.com',
+// LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+//   name: 'James Morrison',
+//   email: 'jamesmorrison@example.com',
 
-  // Add your own custom user variables here, ie:
-  subscriptionType: 'pro',
-})
+//   // Add your own custom user variables here, ie:
+//   subscriptionType: 'pro',
+// })
 const Root = () => {
   const dispatch = useDispatch()
   const { isLogin } = useStore('basic')

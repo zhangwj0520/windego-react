@@ -3325,6 +3325,11 @@ buffer-indexof@^1.0.0:
   resolved "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-1.1.1.tgz#52fabcc6a606d1a00302802648ef68f639da268c"
   integrity sha512-4/rOEg86jivtPTeOUUT61jJO1Ya1TrR/OkqCSZDyq84WJh3LuuiphBYJN+fm5xufIk4XAFcEwte/8WzC8If/1g==
 
+buffer-json@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/buffer-json/-/buffer-json-2.0.0.tgz#f73e13b1e42f196fe2fd67d001c7d7107edd7c23"
+  integrity sha512-+jjPFVqyfF1esi9fvfUs3NqM0pH1ziZ36VP4hmA/y/Ssfo/5w5xHKfTw9BwQjoJ1w/oVtpLomqwUHKdefGyuHw==
+
 buffer-xor@^1.0.3:
   version "1.0.3"
   resolved "https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
@@ -3418,6 +3423,18 @@ cache-base@^1.0.1:
     to-object-path "^0.3.0"
     union-value "^1.0.0"
     unset-value "^1.0.0"
+
+cache-loader@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npmjs.org/cache-loader/-/cache-loader-4.1.0.tgz#9948cae353aec0a1fcb1eafda2300816ec85387e"
+  integrity sha512-ftOayxve0PwKzBF/GLsZNC9fJBXl8lkZE3TOsjkboHfVHVkL39iUEs1FO07A33mizmci5Dudt38UZrrYXDtbhw==
+  dependencies:
+    buffer-json "^2.0.0"
+    find-cache-dir "^3.0.0"
+    loader-utils "^1.2.3"
+    mkdirp "^0.5.1"
+    neo-async "^2.6.1"
+    schema-utils "^2.0.0"
 
 cachedir@2.2.0:
   version "2.2.0"
@@ -5882,7 +5899,7 @@ find-cache-dir@^2.1.0:
     make-dir "^2.0.0"
     pkg-dir "^3.0.0"
 
-find-cache-dir@^3.2.0:
+find-cache-dir@^3.0.0, find-cache-dir@^3.2.0:
   version "3.3.1"
   resolved "https://registry.npmjs.org/find-cache-dir/-/find-cache-dir-3.3.1.tgz#89b33fad4a4670daa94f855f7fbe31d6d84fe880"
   integrity sha512-t2GDMt3oGC/v+BMwzmllWDuJF/xcDtE5j/fCGbqDD7OLuJkj0cfh1YSA5VKPvwMeLFLNDBkwOKZ2X85jGLVftQ==
@@ -12459,7 +12476,7 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-schema-utils@^2.6.1, schema-utils@^2.6.4, schema-utils@^2.6.5:
+schema-utils@^2.0.0, schema-utils@^2.6.1, schema-utils@^2.6.4, schema-utils@^2.6.5:
   version "2.6.6"
   resolved "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.6.tgz#299fe6bd4a3365dc23d99fd446caff8f1d6c330c"
   integrity sha512-wHutF/WPSbIi9x6ctjGGk2Hvl0VOz5l3EKEuKbjPlB30mKZUzb9A5k9yEXRX3pwyqVLPvpfZZEllaFq/M718hA==
@@ -14489,10 +14506,10 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-windego-react-scripts@1.0.27:
-  version "1.0.27"
-  resolved "https://registry.npmjs.org/windego-react-scripts/-/windego-react-scripts-1.0.27.tgz#539262e08762a25ede65ab409950224b489514f3"
-  integrity sha512-PQRtbodfnRSpFhRUAo6Y4ldxW3dlXjJhPy5kOzIQQQgLZsh3+9IyhjFjgJTx3/aJ9Svh9AtTNMbFeEkrVu3n8g==
+windego-react-scripts@^1.0.38:
+  version "1.0.38"
+  resolved "https://registry.npmjs.org/windego-react-scripts/-/windego-react-scripts-1.0.38.tgz#e551ec3998529a89627bc082a5618afe650a3f76"
+  integrity sha512-+DMPy6MJhjsK4Bv1ynrjiLBxth+V1ufkPZEtvMAVmQ9C4aejLvJJMa1AaTuPXrIlWnayvewi1c7MOWemTD+lgw==
   dependencies:
     "@babel/core" "7.9.0"
     "@pmmmwh/react-refresh-webpack-plugin" "0.3.0-beta.1"
@@ -14506,6 +14523,7 @@ windego-react-scripts@1.0.27:
     babel-plugin-import "^1.13.0"
     babel-plugin-named-asset-import "^0.3.6"
     babel-preset-react-app "^9.1.2"
+    cache-loader "^4.1.0"
     camelcase "^6.0.0"
     case-sensitive-paths-webpack-plugin "2.3.0"
     css-loader "3.5.2"

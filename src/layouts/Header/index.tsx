@@ -12,7 +12,7 @@ import Download from '@components/Download'
 
 import Icon from '@components/Icon'
 
-import { selectCollapsed, changeCollapsed } from '@src/store/modules/basic.module'
+import { selectCollapsed, onCollapse } from '@src/store/modules/basic.module'
 import { selectUserInfo } from '@src/store/modules/userInfo.module'
 import styles from './styles.scss'
 
@@ -23,9 +23,7 @@ const TopHeader: React.FC = () => {
 
   useEffect(() => {
     const isLogged = localStorage.getItem('isLogin') === '1'
-    console.log(isLogged)
     if (isLogged) {
-      console.log(111111)
       history.push('/')
     }
   }, [])
@@ -40,10 +38,8 @@ const TopHeader: React.FC = () => {
   const handleMenuClick = ({ key }: ClickParam) => {
     // console.log();
     if (key === 'signout') {
-      console.log(111)
       localStorage.clear()
       history.push('/login')
-      // reduxPush('/user/login');
     } else if (key === 'password') {
       localStorage.clear()
     }
@@ -71,7 +67,7 @@ const TopHeader: React.FC = () => {
             <Icon
               className={styles.trigger}
               type={`icon-${collapsed ? 'menu-unfold' : 'menu-fold'}`}
-              onClick={() => dispatch(changeCollapsed())}
+              onClick={() => dispatch(onCollapse())}
             />
           </div>
         </Col>
@@ -80,7 +76,7 @@ const TopHeader: React.FC = () => {
             <Icon
               className={styles.trigger}
               type={`icon-${collapsed ? 'menu-unfold' : 'menu-fold'}`}
-              onClick={() => dispatch(changeCollapsed())}
+              onClick={() => dispatch(onCollapse())}
             />
           </div>
         </Col>
@@ -117,12 +113,12 @@ const TopHeader: React.FC = () => {
   //       {collapsed ? (
   //         <MenuUnfoldOutlined
   //           className={styles.trigger}
-  //           onClick={() => dispatch(changeCollapsed())}
+  //           onClick={() => dispatch(onCollapse())}
   //         />
   //       ) : (
   //         <MenuFoldOutlined
   //           className={styles.trigger}
-  //           onClick={() => dispatch(changeCollapsed())}
+  //           onClick={() => dispatch(onCollapse())}
   //         />
   //       )}
   // <Breadcrumb separator=">" className={styles.breadcrumb}>

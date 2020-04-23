@@ -1,30 +1,80 @@
-import { Tooltip, Tag } from 'antd'
-import { QuestionCircleOutlined } from '@ant-design/icons'
 import React from 'react'
-import Avatar from './AvatarDropdown'
+import { LogoutOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons'
+import { Avatar, Menu, Spin } from 'antd'
+import { ClickParam } from 'antd/es/menu'
+import { useHistory } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { useStore, useActions } from '@hooks/useStore'
+import HeaderDropdown from '@components/HeaderDropdown'
+import { logout } from '@store/modules/basic.module'
 // import HeaderSearch from '../HeaderSearch'
 // import SelectLang from '../SelectLang'
 import styles from './RightContent.less'
 
-export type SiderTheme = 'light' | 'dark'
-
-type Props = {
-  theme?: SiderTheme
-  layout: 'sidemenu' | 'topmenu'
-}
-
 const GlobalHeaderRight: React.SFC = () => {
-  const theme = 'light'
-  const layout = 'sidemenu'
-  const className = styles.right
+  const {
+    basic: { theme, layout },
+    userInfo: { name, avatar },
+  } = useStore(['basic', 'userInfo'])
+  let className = styles.right
 
-  // if (theme === 'dark' && layout === 'topmenu') {
-  //   className = `${styles.right}  ${styles.dark}`
-  // }
+  if (theme === 'dark' && layout === 'topmenu') {
+    className = `${styles.right}  ${styles.dark}`
+  }
+
+  const history = useHistory()
+  const dispatch = useDispatch()
+
+  const onMenuClick = (event: ClickParam) => {
+    const { key } = event
+
+    if (key === 'logout') {
+      dispatch(logout())
+      history.push('/login')
+    }
+  }
+
+  const menuHeaderDropdown = (
+    <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick}>
+      <Menu.Item key="center">
+        <UserOutlined />
+        个人中心
+      </Menu.Item>
+
+      <Menu.Item key="settings">
+        <SettingOutlined />
+        个人设置
+      </Menu.Item>
+
+      <Menu.Divider />
+
+      <Menu.Item key="logout">
+        <LogoutOutlined />
+        退出登录
+      </Menu.Item>
+    </Menu>
+  )
 
   return (
     <div className={className}>
-      <Avatar />
+      {name ? (
+        <HeaderDropdown overlay={menuHeaderDropdown}>
+          <span className={`${styles.action} ${styles.account}`}>
+            <Avatar size="small" className={styles.avatar} src={avatar} alt="avatar" />
+            <span className={styles.name}>{name}</span>
+          </span>
+        </HeaderDropdown>
+      ) : (
+        <span className={`${styles.action} ${styles.account}`}>
+          <Spin
+            size="small"
+            style={{
+              marginLeft: 8,
+              marginRight: 8,
+            }}
+          />
+        </span>
+      )}
     </div>
   )
 }

@@ -57,7 +57,8 @@ declare interface IPrivilege {
 declare interface IUserInfo {
   user_id: string
   userName: string
-  chinesename: string
+  name: string
+  avatar: string
   role_id: number
   role_name: string // 角色名称-超管
   status: 1 | 0 // 账号状态-生效or失效

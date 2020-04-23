@@ -51,7 +51,7 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.0.0",
     "typescript": "^3.8.3",
-    "windego-react-scripts": "1.0.27"
+    "windego-react-scripts": "^1.0.38"
   },
   "scripts": {
     "start": "react-scripts start",

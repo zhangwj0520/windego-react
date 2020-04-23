@@ -11,13 +11,13 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: '首页',
     exact: true,
-    icon: 'home',
+    icon: 'icon-home',
     component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@pages/welcome')),
   },
   {
     path: '/business',
     name: '组件',
-    icon: 'home',
+    icon: 'icon-react',
     children: [
       {
         path: '/business/manage',
