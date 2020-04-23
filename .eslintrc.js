@@ -120,7 +120,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
 
     // @typescript-eslint
-    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-empty-interface': 'off',

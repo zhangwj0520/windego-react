@@ -1,5 +1,3 @@
-import { lazy } from 'react'
-
 import loadable from '@utils/loadable'
 
 import RouteConfig from '@routes/route.types'

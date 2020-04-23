@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { Route } from 'react-router-dom'
 import routes from '@routes/route.config'
 import RouteConfig from '@routes/route.types'
-import checkAuth from '@utils/authUtils'
+// import checkAuth from '@utils/authUtils'
 
 type Breadcrumb = {
   name?: string
