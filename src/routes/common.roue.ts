@@ -5,9 +5,9 @@ import RouteConfig from '@routes/route.types'
 const routes: Array<RouteConfig> = [
   {
     path: '/exception',
-    name: '首页',
+    name: '异常页',
     exact: true,
-    icon: 'icon-home',
+    icon: 'icon-yichang',
     children: [
       {
         path: '/exception/403',

@@ -1,7 +1,7 @@
 import { message } from 'antd'
 import axios, { AxiosResponse } from 'axios'
 import { USER_NOT_LOGIN } from '@constants/base'
-import config from '@config/index'
+import { host } from '@src/config'
 
 const transAxiosResponse = <ResponseData extends object | boolean>({
   data: axiosData,
@@ -30,7 +30,7 @@ const falsyFilter = (params: { [key: string]: any }) => {
 }
 
 const instance = axios.create({
-  baseURL: `${config.host}/`,
+  baseURL: `${host}/`,
   timeout: 10000,
 })
 instance.interceptors.request.use((conf) => {

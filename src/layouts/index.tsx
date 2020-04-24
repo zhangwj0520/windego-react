@@ -9,6 +9,7 @@ import { useStore, useDispatch } from '@hooks/useStore'
 import { onCollapse } from '@store/modules/basic.module'
 import { getUserInfo } from '@layouts/api'
 import { setUserInfo } from '@src/store/modules/userInfo.module'
+import { iconfontUrl } from '@src/config'
 
 import menuData from '@routes/route.config'
 import SettingDrawer from './SettingDrawer'
@@ -43,9 +44,9 @@ function Index() {
         logo={logo}
         collapsed={collapsed}
         onCollapse={(val) => dispatch(onCollapse(val))}
-        iconfontUrl="//at.alicdn.com/t/font_1721886_67j8vlmn6vq.js"
+        iconfontUrl={iconfontUrl}
         navTheme={theme}
-        contentStyle={{ margin: 12 }}
+        contentStyle={{ margin: 5 }}
         fixSiderbar={fixSiderbar}
         fixedHeader={fixedHeader} // 是否固定头部
         siderWidth={180} // 菜单宽度

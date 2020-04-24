@@ -18,8 +18,7 @@
       "@layouts/*": ["layouts/*"],
       "@utils/*": ["utils/*"],
       "@routes/*": ["routes/*"],
-      "@store/*": ["store/*"],
-      "@config/*": ["config/*"]
+      "@store/*": ["store/*"]
     },
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,

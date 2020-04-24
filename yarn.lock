@@ -14489,10 +14489,10 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
-windego-react-scripts@^1.0.38:
-  version "1.0.38"
-  resolved "https://registry.npmjs.org/windego-react-scripts/-/windego-react-scripts-1.0.38.tgz#e551ec3998529a89627bc082a5618afe650a3f76"
-  integrity sha512-+DMPy6MJhjsK4Bv1ynrjiLBxth+V1ufkPZEtvMAVmQ9C4aejLvJJMa1AaTuPXrIlWnayvewi1c7MOWemTD+lgw==
+windego-react-scripts@^1.0.40:
+  version "1.0.40"
+  resolved "https://registry.npmjs.org/windego-react-scripts/-/windego-react-scripts-1.0.40.tgz#a37a1bfd5198d24333985faac2cb83154f9cec30"
+  integrity sha512-BkwflQSjuQQZXMHM/tyHvIbLtOEujNQSZvI6AKiQRlBRNYVTmsNvLVifnhDCcxpVLXY8n/tczkVnqEJ2XI+M3Q==
   dependencies:
     "@babel/core" "7.9.0"
     "@pmmmwh/react-refresh-webpack-plugin" "0.3.0-beta.1"
