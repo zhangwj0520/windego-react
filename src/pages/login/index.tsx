@@ -23,14 +23,14 @@ interface State {
   clientHeight: number
 }
 
-function Login(props: Props) {
+function Login() {
   const history = useHistory()
   const dispatch = useDispatch()
   const { isLogin } = useStore('basic')
 
   useEffect(() => {
     if (isLogin) {
-      history.push('/')
+      history.replace('/')
     }
   }, [isLogin, history])
 
