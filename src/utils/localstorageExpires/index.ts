@@ -70,7 +70,7 @@ class CacheStorage {
 
   constructor() {
     this.storage = window.localStorage as Window['localStorage']
-    this.initRun()
+    // this.initRun()
   }
 
   /**
@@ -79,17 +79,14 @@ class CacheStorage {
   initRun() {
     const timeNow = new Date().getTime()
     const data = this.storage
+    console.log(data)
     Object.entries(data).forEach((item) => {
       const [key, val] = item
       let cacheItem: CacheItem | string
 
       try {
         cacheItem = deserialize(val)
-        // console.log(cacheItem.expiresTime.replace(/-/g, '/'))
         const exp = new Date(cacheItem.expiresTime.replace(/-/g, '/')).getTime()
-        console.log(exp)
-        console.log(timeNow > exp)
-        console.log(timeNow)
         if (timeNow > exp) {
           console.log(`超时删除 {${key}:${cacheItem.value}}`)
           this.remove(key)

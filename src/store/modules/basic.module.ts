@@ -2,12 +2,10 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 // eslint-disable-next-line import/no-cycle
 import { RootState } from '@store/index'
 
-import cacheStorage from '@utils/localstorageExpires'
+import storage from '@utils/localStorage'
 
 export type SiderTheme = 'light' | 'dark'
 export type LayoutType = 'sidemenu' | 'topmenu'
-
-console.log(cacheStorage.get('isLogin'))
 interface BasicState {
   theme?: SiderTheme
   collapsed: boolean
@@ -18,13 +16,13 @@ interface BasicState {
   fixSiderbar: boolean
 }
 const initialState: BasicState = {
-  theme: cacheStorage.get('theme') || 'dark',
-  collapsed: cacheStorage.get('collapsed'),
+  theme: storage.get('theme') || 'dark',
+  collapsed: storage.get('collapsed'),
   title: 'React Demo',
-  isLogin: cacheStorage.get('isLogin') === 'login',
-  layout: cacheStorage.get('layout') || 'sidemenu',
-  fixedHeader: cacheStorage.get('fixedHeader') || false,
-  fixSiderbar: cacheStorage.get('fixSiderbar') || true,
+  isLogin: storage.get('isLogin'),
+  layout: storage.get('layout') || 'sidemenu',
+  fixedHeader: storage.get('fixedHeader') || false,
+  fixSiderbar: storage.get('fixSiderbar') || true,
 }
 
 export const slice = createSlice({
@@ -32,31 +30,31 @@ export const slice = createSlice({
   initialState,
   reducers: {
     onChangeTheme: (state, { payload }: PayloadAction<SiderTheme>) => {
-      cacheStorage.set('theme', payload)
+      storage.set('theme', payload)
       state.theme = payload
     },
     onChangeLayout: (state, { payload }: PayloadAction<LayoutType>) => {
-      cacheStorage.set('layout', payload)
+      storage.set('layout', payload)
       state.layout = payload
     },
     onChangeFixedHeader: (state, { payload }: PayloadAction<boolean>) => {
-      cacheStorage.set('fixedHeader', payload)
+      storage.set('fixedHeader', payload)
       state.fixedHeader = payload
     },
     onChangeFixSiderbar: (state, { payload }: PayloadAction<boolean>) => {
-      cacheStorage.set('fixSiderbar', payload)
+      storage.set('fixSiderbar', payload)
       state.fixSiderbar = payload
     },
     onCollapse: (state, { payload }: any) => {
-      cacheStorage.set('collapsed', payload)
+      storage.set('collapsed', payload)
       state.collapsed = payload
     },
     login: (state) => {
-      cacheStorage.set('isLogin', 'login')
+      storage.set('isLogin', true)
       state.isLogin = true
     },
     logout: (state) => {
-      cacheStorage.clear()
+      storage.clear()
       state.isLogin = false
     },
   },
