@@ -6,6 +6,8 @@ import cacheStorage from '@utils/localstorageExpires'
 
 export type SiderTheme = 'light' | 'dark'
 export type LayoutType = 'sidemenu' | 'topmenu'
+
+console.log(cacheStorage.get('isLogin'))
 interface BasicState {
   theme?: SiderTheme
   collapsed: boolean
@@ -19,7 +21,7 @@ const initialState: BasicState = {
   theme: cacheStorage.get('theme') || 'dark',
   collapsed: cacheStorage.get('collapsed'),
   title: 'React Demo',
-  isLogin: cacheStorage.get('isLogin'),
+  isLogin: cacheStorage.get('isLogin') === 'login',
   layout: cacheStorage.get('layout') || 'sidemenu',
   fixedHeader: cacheStorage.get('fixedHeader') || false,
   fixSiderbar: cacheStorage.get('fixSiderbar') || true,
@@ -50,7 +52,7 @@ export const slice = createSlice({
       state.collapsed = payload
     },
     login: (state) => {
-      cacheStorage.set('isLogin', true)
+      cacheStorage.set('isLogin', 'login')
       state.isLogin = true
     },
     logout: (state) => {

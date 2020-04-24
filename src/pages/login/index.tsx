@@ -30,7 +30,7 @@ function Login() {
 
   useEffect(() => {
     if (isLogin) {
-      history.replace('/')
+      history.push('/')
     }
   }, [isLogin, history])
 

@@ -2,9 +2,9 @@
 import moment from 'moment'
 import { serialize, deserialize } from './helps'
 
-import { AllRes, CacheItem } from './types'
+import { CacheItem } from './types'
 
-const defaultExpiresTime = '9999-12-31 23:59:59'
+const defaultExpiresTime = '2222/12/31 23:59:59'
 /**
  *
  * @param {String} key
@@ -38,7 +38,7 @@ function isCacheItem(item: any) {
  * @param {*} value 值
  * @param {*} expires 过期时间
  */
-function cacheItemConstructor(value: any, expires: number | string) {
+function cacheItemConstructor(value: any, expires?: number | string) {
   // 序列话value
   const val = serialize(value)
   // 获取当前时间,创建时间
@@ -66,12 +66,9 @@ function cacheItemConstructor(value: any, expires: number | string) {
 }
 
 class CacheStorage {
-  allData: AllRes
-
   storage: Window['localStorage']
 
   constructor() {
-    this.allData = {}
     this.storage = window.localStorage as Window['localStorage']
     this.initRun()
   }
@@ -82,25 +79,25 @@ class CacheStorage {
   initRun() {
     const timeNow = new Date().getTime()
     const data = this.storage
-    const allData = {}
     Object.entries(data).forEach((item) => {
       const [key, val] = item
       let cacheItem: CacheItem | string
 
       try {
         cacheItem = deserialize(val)
-        const exp = new Date(cacheItem.expiresTime).getTime()
+        // console.log(cacheItem.expiresTime.replace(/-/g, '/'))
+        const exp = new Date(cacheItem.expiresTime.replace(/-/g, '/')).getTime()
+        console.log(exp)
+        console.log(timeNow > exp)
+        console.log(timeNow)
         if (timeNow > exp) {
           console.log(`超时删除 {${key}:${cacheItem.value}}`)
           this.remove(key)
-        } else {
-          allData[key] = deserialize(cacheItem.value)
         }
       } catch (e) {
-        allData[key] = val
+        console.log(e)
       }
     })
-    this.allData = allData
   }
 
   /**
@@ -128,7 +125,32 @@ class CacheStorage {
    * @description 返回所有localStorage 的内容
    */
   getAll() {
-    return this.allData
+    const allData = {}
+
+    const timeNow = new Date().getTime()
+    const data = this.storage
+    Object.entries(data).forEach((item) => {
+      const [key, val] = item
+      let cacheItem: CacheItem | string
+
+      try {
+        cacheItem = deserialize(val)
+        // console.log(cacheItem.expiresTime.replace(/-/g, '/'))
+        const exp = new Date(cacheItem.expiresTime.replace(/-/g, '/')).getTime()
+        console.log(exp)
+        console.log(timeNow > exp)
+        console.log(timeNow)
+        if (timeNow > exp) {
+          console.log(`超时删除 {${key}:${cacheItem.value}}`)
+          this.remove(key)
+        } else {
+          allData[key] = deserialize(cacheItem.value)
+        }
+      } catch (e) {
+        allData[key] = val
+      }
+    })
+    return allData
   }
 
   /**
@@ -166,7 +188,7 @@ class CacheStorage {
       }
     }
     if (type === '[object Undefined]') {
-      return this.allData
+      return this.getAll()
     }
     if (type === '[object Array]') {
       return (key as Array<string>).reduce((pre, item) => {
@@ -208,4 +230,5 @@ class CacheStorage {
   }
 }
 const cacheStorage = new CacheStorage()
+console.log(cacheStorage)
 export default cacheStorage
