@@ -1,22 +1,26 @@
 import { message } from 'antd'
 import axios, { AxiosResponse } from 'axios'
-import { USER_NOT_LOGIN } from '@constants/base'
+// import { USER_NOT_LOGIN } from '@constants/base'
 import { host } from '@src/config'
 
 const transAxiosResponse = <ResponseData extends object | boolean>({
   data: axiosData,
 }: AxiosResponse<IResponseData<ResponseData>>): Promise<ResponseData> => {
   if (axiosData.errno === 0) {
-    return Promise.resolve(axiosData.data)
+    if (axiosData.msg) {
+      message.success(axiosData.msg)
+    }
+  } else {
+    message.error(axiosData.msg)
   }
-  message.error(axiosData.errmsg)
+  return Promise.resolve(axiosData.data)
 
   // 未登录
-  if (axiosData.errno === USER_NOT_LOGIN) {
-    window.location.replace((axiosData.data as any).url)
-  }
+  // if (axiosData.errno === USER_NOT_LOGIN) {
+  //   window.location.replace((axiosData.data as any).url)
+  // }
 
-  return Promise.reject(new Error(axiosData.errmsg))
+  // return Promise.reject(new Error(axiosData.errmsg))
 }
 // 过滤所有空字符串参数
 const falsyFilter = (params: { [key: string]: any }) => {

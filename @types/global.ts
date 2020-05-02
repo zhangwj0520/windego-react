@@ -1,7 +1,7 @@
 // 后端返回数据；
 declare interface IResponseData<T> {
   errno: number
-  errmsg: string
+  msg: string
   data: T
   st: number
   logid: string
@@ -15,7 +15,7 @@ declare interface IListResponse<T> {
 
 // context
 declare interface KFCContext {
-  userInfo: IUserInfo
+  user: IUserInfo
   marketOptions: MarketItem[]
 }
 

@@ -13,7 +13,7 @@ import Download from '@components/Download'
 import Icon from '@components/Icon'
 
 import { selectCollapsed, onCollapse } from '@src/store/modules/basic.module'
-import { selectUserInfo } from '@src/store/modules/userInfo.module'
+import { selectUserInfo } from '@src/store/modules/user.module'
 import styles from './styles.scss'
 
 const { Header } = Layout

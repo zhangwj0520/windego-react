@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '@store/index'
-
+import { AppThunk, RootState } from '@store/index'
+import { get, post } from '@utils/request'
 import storage from '@utils/localStorage'
+import { PhoneType, LoginParams } from './module.type'
 
 export type SiderTheme = 'light' | 'dark'
 export type LayoutType = 'sidemenu' | 'topmenu'
@@ -49,10 +50,7 @@ export const slice = createSlice({
       storage.set('collapsed', payload)
       state.collapsed = payload
     },
-    login: (state) => {
-      storage.set('isLogin', true)
-      state.isLogin = true
-    },
+
     logout: (state) => {
       storage.clear()
       state.isLogin = false
@@ -62,7 +60,6 @@ export const slice = createSlice({
 
 export const {
   onCollapse,
-  login,
   logout,
   onChangeTheme,
   onChangeLayout,
@@ -70,6 +67,14 @@ export const {
   onChangeFixSiderbar,
 } = slice.actions
 export const { name } = slice
+
+export const getCodeApi = (params: PhoneType) => get<IResponseData<boolean>>('/crm/getcode', params)
+export const loginApi = (params: LoginParams) => post<IResponseData<boolean>>('/crm/login', params)
+export const login = (params: LoginParams): AppThunk => () => {
+  const userInfo = loginApi(params)
+  console.log(userInfo)
+}
+
 export const selectCollapsed = (state: RootState) => state.basic.collapsed
 export const getTitle = (state: RootState) => state.basic.title
 export const getTheme = (state: RootState) => state.basic.theme

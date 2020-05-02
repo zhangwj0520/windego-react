@@ -1,5 +1,5 @@
 /* eslint-disable no-template-curly-in-string */
-export const USER_NOT_LOGIN = 1000013
+export const USER_NOT_LOGIN = 10001
 export const USER_NO_PRIVILEGE = 1000014
 export const USER_NO_AUTH = 1000015
 

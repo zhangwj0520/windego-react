@@ -4,7 +4,7 @@ import logger from 'redux-logger'
 
 import { combineReducers, Reducer, ReducersMapObject } from 'redux'
 
-import userInfoReducer from './modules/userInfo.module'
+import userInfoReducer from './modules/user.module'
 import basicReducer from './modules/basic.module'
 
 type AsyncReducers = {
@@ -15,7 +15,7 @@ const asyncReducers: AsyncReducers = {}
 
 function makeRootReducer<A, M extends ReducersMapObject<A>>(reducers?: M) {
   return combineReducers({
-    userInfo: userInfoReducer,
+    user: userInfoReducer,
     basic: basicReducer,
     ...reducers,
   })

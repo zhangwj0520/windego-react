@@ -8,7 +8,7 @@ import logo from '@assets/images/logo.png'
 import { useStore, useDispatch } from '@hooks/useStore'
 import { onCollapse } from '@store/modules/basic.module'
 import { getUserInfo } from '@layouts/api'
-import { setUserInfo } from '@src/store/modules/userInfo.module'
+import { setUserInfo } from '@src/store/modules/user.module'
 import { iconfontUrl } from '@src/config'
 
 import menuData from '@routes/route.config'

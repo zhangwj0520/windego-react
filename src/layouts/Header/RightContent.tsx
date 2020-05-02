@@ -13,8 +13,8 @@ import styles from './RightContent.less'
 const GlobalHeaderRight: React.SFC = () => {
   const {
     basic: { theme, layout },
-    userInfo: { name, avatar },
-  } = useStore(['basic', 'userInfo'])
+    user: { name, avatar },
+  } = useStore(['basic', 'user'])
   let className = styles.right
 
   if (theme === 'dark' && layout === 'topmenu') {
