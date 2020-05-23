@@ -5,15 +5,10 @@ import { Avatar, Dropdown, Menu, Layout, Breadcrumb, Row, Col } from 'antd'
 import { ClickParam } from 'antd/lib/menu/index.d'
 import { getBreadcrumb } from '@utils/routeUtils'
 import { UserOutlined } from '@ant-design/icons'
-
-import { useSelector, useDispatch } from 'react-redux'
-
 import Download from '@components/Download'
-
 import Icon from '@components/Icon'
-
-import { selectCollapsed, onCollapse } from '@src/store/modules/basic.module'
-import { selectUserInfo } from '@src/store/modules/user.module'
+import { useStore, useDispatch } from '@hooks/useStore'
+import { onCollapse } from '@src/store/modules/basic.module'
 import styles from './styles.scss'
 
 const { Header } = Layout
@@ -28,15 +23,18 @@ const TopHeader: React.FC = () => {
     }
   }, [])
 
-  const collapsed = useSelector(selectCollapsed)
-  const { userName } = useSelector(selectUserInfo)
+  const {
+    basic: { collapsed },
+    user: {
+      userInfo: { userName },
+    },
+  } = useStore(['basic', 'user'])
   const dispatch = useDispatch()
 
   const { pathname } = useLocation()
   const breadcrumb = getBreadcrumb(pathname)
 
   const handleMenuClick = ({ key }: ClickParam) => {
-    // console.log();
     if (key === 'signout') {
       localStorage.clear()
       history.push('/login')

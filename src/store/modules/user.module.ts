@@ -1,12 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { message } from 'antd'
 // eslint-disable-next-line import/no-cycle
-import { RootState } from '@store/index'
+import store, { AppThunk, RootState } from '@store/index'
+import { get } from '@utils/request'
+// eslint-disable-next-line import/no-cycle
+import { onLogin } from './basic.module'
+import { PhoneType, LoginParams, CodeType } from './module.type'
 
-const initialState: IUserInfo = {
+const userInfo: IUserInfo = {
   user_id: '',
   userName: '用户名',
-  name: '',
-  avatar: '',
+  name: '用户名',
+  avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
   role_id: 0,
   role_name: '',
   status: 0,
@@ -18,21 +23,41 @@ const initialState: IUserInfo = {
 
 export const slice = createSlice({
   name: 'user',
-  initialState,
+  initialState: { userInfo, code: '' },
   reducers: {
+    setCode: (state, { payload }: PayloadAction<CodeType>) => {
+      state.code = payload.code
+    },
     setUserInfo: (state, { payload }: PayloadAction<IUserInfo>) => {
-      Object.entries(payload).forEach((item) => {
-        const [key, val] = item
-        state[key] = val
-      })
+      state.userInfo = payload
+      // Object.entries(payload).forEach((item) => {
+      //   const [key, val] = item
+      //   state[key] = val
+      // })
     },
   },
 })
 
-export const { setUserInfo } = slice.actions
-export const selectUserInfo = (state: RootState) => state.user
+export const { setUserInfo, setCode } = slice.actions
+export const selectUserInfo = (state: RootState) => state.user.userInfo
 
 // service
+
+export const getCodeApi = (params: PhoneType) => get<CodeType>('/common/getcode', params)
+
+export const getCode = (params: PhoneType): AppThunk => async (dispatch) => {
+  const data = await getCodeApi(params)
+  dispatch(setCode(data))
+}
+export const login = (params: LoginParams): AppThunk => (dispatch) => {
+  const { code } = store.getState().user
+  if (params.code === code) {
+    dispatch(onLogin())
+    message.success('模拟登陆成功!')
+  } else {
+    message.error('验证码错误')
+  }
+}
 
 /**
  * 获取用户信息

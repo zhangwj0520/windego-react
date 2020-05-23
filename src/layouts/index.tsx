@@ -7,8 +7,6 @@ import WaterMark from '@components/WaterMark'
 import logo from '@assets/images/logo.png'
 import { useStore, useDispatch } from '@hooks/useStore'
 import { onCollapse } from '@store/modules/basic.module'
-import { getUserInfo } from '@layouts/api'
-import { setUserInfo } from '@src/store/modules/user.module'
 import { iconfontUrl } from '@src/config'
 
 import menuData from '@routes/route.config'
@@ -28,11 +26,11 @@ function Index() {
   }, [pathname])
 
   useEffect(() => {
-    const getInitData = async () => {
-      const data = await getUserInfo()
-      dispatch(setUserInfo(data))
-    }
-    getInitData()
+    // const getInitData = async () => {
+    //   const data = await getUserInfo()
+    //   dispatch(setUserInfo(data))
+    // }
+    // getInitData()
   }, [dispatch])
 
   return (

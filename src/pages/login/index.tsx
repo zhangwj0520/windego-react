@@ -6,7 +6,7 @@ import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 
 // import { isEmpty } from 'lodash'
-import { login, getCodeApi } from '@store/modules/basic.module'
+import { login, getCode } from '@store/modules/user.module'
 import { LoginParams } from '@store/modules/module.type'
 import { useStore } from '@hooks/useStore'
 import { useSetState } from '@hooks/index'
@@ -84,7 +84,7 @@ function Login() {
         }}
       />
       <div className={styles.content}>
-        <div className={styles.title}>后台管理系统1</div>
+        <div className={styles.title}>React Demo</div>
         <Form className="login-form" onFinish={onFinish} form={form}>
           <FormItem name="phone" rules={rules.phone}>
             <Input
@@ -107,7 +107,7 @@ function Login() {
               <Col span={8} style={{ textAlign: 'end' }}>
                 <Button
                   disabled={!/^1[3456789]\d{9}/.test(phone)}
-                  onClick={() => getCodeApi({ phone })}
+                  onClick={() => dispatch(getCode({ phone }))}
                 >
                   获取验证码
                 </Button>

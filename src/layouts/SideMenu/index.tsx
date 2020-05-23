@@ -1,13 +1,12 @@
-import React, { useState, useMemo, useContext } from 'react'
+import React, { useMemo } from 'react'
 import { Layout, Menu } from 'antd'
 import { useLocation } from 'react-router'
 import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
 import RouteConfig from '@routes/route.types'
+import { useStore } from '@hooks/useStore'
 import menus from '@routes/route.config'
 import Icon from '@components/Icon'
 import logo from '@assets/images/logo.png'
-import { name, selectCollapsed, onCollapse } from '@src/store/modules/basic.module'
 
 import styles from './styles.scss'
 
@@ -15,8 +14,7 @@ const { Sider } = Layout
 const { SubMenu } = Menu
 
 const SiderMenu: React.FC = () => {
-  const { collapsed, title } = useSelector((state) => state[name])
-  const dispatch = useDispatch()
+  const { collapsed, title } = useStore('baisc')
 
   const { pathname } = useLocation()
 
@@ -29,8 +27,9 @@ const SiderMenu: React.FC = () => {
       defaultOpenKeys = [key[0]]
     }
     return defaultOpenKeys
+    // 模拟didmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []) // 模拟didmount
+  }, [])
 
   const generateMenu = (menu: RouteConfig) => {
     if (menu.hideInMenu) return null

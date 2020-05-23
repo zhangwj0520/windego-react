@@ -13,7 +13,9 @@ import styles from './RightContent.less'
 const GlobalHeaderRight: React.SFC = () => {
   const {
     basic: { theme, layout },
-    user: { name, avatar },
+    user: {
+      userInfo: { name, avatar },
+    },
   } = useStore(['basic', 'user'])
   let className = styles.right
 
