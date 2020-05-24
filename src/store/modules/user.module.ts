@@ -48,9 +48,11 @@ export const getCodeApi = (params: PhoneType) => get<CodeType>('/common/getcode'
 export const getCode = (params: PhoneType): AppThunk => async (dispatch) => {
   const data = await getCodeApi(params)
   dispatch(setCode(data))
+  message.success('模拟获取验证码,打开开发者工具查看!')
 }
 export const login = (params: LoginParams): AppThunk => (dispatch) => {
   const { code } = store.getState().user
+  console.log(code)
   if (params.code === code) {
     dispatch(onLogin())
     message.success('模拟登陆成功!')

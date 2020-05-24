@@ -7,6 +7,7 @@ export default () => {
       <div className={styles.brand}>
         <h2>React Demo</h2>
         <p>让前端更简单</p>
+        <p>样式后面再优化吧</p>
       </div>
 
       <div className={styles.background} />

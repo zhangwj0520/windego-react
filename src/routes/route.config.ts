@@ -33,8 +33,8 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/amap',
-    name: 'amap',
-    icon: 'icon-react',
+    name: '地图',
+    icon: 'icon-amap',
     children: [
       {
         path: '/amap/polygon',
@@ -58,28 +58,23 @@ const routes: Array<RouteConfig> = [
       },
     ],
   },
-  // {
-  //   path: '/user',
-  //   name: '账号权限',
-  //   icon: 'home',
-  //   children: [
-  //     {
-  //       path: '/user/role',
-  //       name: '角色管理',
-  //       component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-  //     },
-  //     {
-  //       path: '/user/account',
-  //       name: '账号管理',
-  //       component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-  //     },
-  //     {
-  //       path: '/user/log',
-  //       name: '操作日志',
-  //       component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-  //     },
-  //   ],
-  // },
+  {
+    path: '/user',
+    name: '表单',
+    icon: 'icon-table',
+    children: [
+      {
+        path: '/user/role',
+        name: '角色管理',
+        component: loadable('user/Role'),
+      },
+      {
+        path: '/user/log',
+        name: '操作日志',
+        component: loadable('user/Log'),
+      },
+    ],
+  },
   ...commonRoutes,
   ...(process.env.$OMIT_DEMO ? demoRoutes : []),
 ]

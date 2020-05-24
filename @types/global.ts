@@ -75,3 +75,8 @@ declare interface IUserInfo {
 declare interface IEvents {
   [event: string]: (e: any) => any
 }
+
+declare interface IPagerParams {
+  page: number
+  page_size: number
+}
