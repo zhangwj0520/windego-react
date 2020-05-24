@@ -11,6 +11,8 @@ import { setAMapKey, setAMapVersion } from '@components/Map/Map'
 setAMapKey('f14b53ff8828b86585fa849ce39f8871')
 setAMapVersion('1.4.15')
 
+console.log(process.env)
+
 const Root = () => {
   const { isLogin } = useStore('basic')
 
