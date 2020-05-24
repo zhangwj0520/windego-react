@@ -69,3 +69,9 @@ declare interface IUserInfo {
   privilege_list: IPrivilege[] // 权限信息
   report_privilege: 1 | 2 | 3 | 4 // 用户报表权限 code
 }
+
+//
+
+declare interface IEvents {
+  [event: string]: (e: any) => any
+}

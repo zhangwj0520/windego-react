@@ -71,6 +71,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-plusplus': 'off',
     'dot-notation': 'off',
+    'consistent-return': 'off',
 
     //import
     'import/no-extraneous-dependencies': 'off',

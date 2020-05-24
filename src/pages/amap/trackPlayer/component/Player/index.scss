@@ -1,0 +1,47 @@
+.box {
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .anticon {
+    color: #ccc;
+    font-size: 30px;
+    margin: 0 10px;
+  }
+
+  .toolbar {
+    width: 70px;
+    display: flex;
+    align-items: center;
+  }
+
+  .timeline {
+    height: 1px;
+    width: 100px;
+    flex-grow: 1;
+    background: #ccc;
+    margin: 0 10px;
+    position: relative;
+  }
+
+  .ball {
+    width: 10px;
+    height: 10px;
+    background: #1890ff;
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    // left: ${(props: { left: number }) => `${props.left}%`};
+
+    .current-time {
+      position: absolute;
+      width: 200px;
+      font-size: 12px;
+      top: -10px;
+    }
+  }
+}

@@ -1797,6 +1797,147 @@
   resolved "https://registry.npmjs.org/@testing-library/user-event/-/user-event-7.2.1.tgz#2ad4e844175a3738cb9e7064be5ea070b8863a1c"
   integrity sha512-oZ0Ib5I4Z2pUEcoo95cT1cr6slco9WY7yiPpG+RGNkj8YcYgJnM7pXmYmorNOReh8MIGcKSqXyeGjxnr8YiZbA==
 
+"@types/amap-js-api-arrival-range@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-arrival-range/-/amap-js-api-arrival-range-1.4.0.tgz#67af99d28674f7ff329c0652b41324e8aed99adc"
+  integrity sha512-H/TSBFb4oHXq5hoLBOUrh9r6KdV1e9FZXDP0Bs8Q9O48A3LlRQQkDAkdMLDwovCapP97ZH7rh2yl3HL6pweXhA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-autocomplete@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-autocomplete/-/amap-js-api-autocomplete-1.4.0.tgz#11b9aeeaa48bd6b9947f921eb45bc6f344d076a9"
+  integrity sha512-sljdDz0tnXvzkcdbNsBiBv7X7Iswmkbt9niakfXMGhG+u4apih4H9BQK8f2tkjKiLsuFANC6feQ2ilamGZTmrw==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-city-search@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-city-search/-/amap-js-api-city-search-1.4.0.tgz#de6a110c8012727ddedaa46f9857a0fdfc66837e"
+  integrity sha512-n9ztHa9WsK+BKATGM7CW1dOwDxazf8MnxR/wZ42Cn+8IpoUe7pajP0vCUJqzJ8HN4ZBzXVRkhcPXKuAMuVLeyw==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-control-bar@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-control-bar/-/amap-js-api-control-bar-1.4.0.tgz#aca494f41a5b790bd99db7def7fae9b7ed10fd51"
+  integrity sha512-0jBKGIctODFvshJKJps4+mW3Jaw8YafbajW6fV6CuVqkAZwQv7R5lzoKN4B0pX8VgahWFh6f65vYRSPG0BfaNA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-district-search@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-district-search/-/amap-js-api-district-search-1.4.0.tgz#d7083e56815b6f9ae72af4ed45639189e480ce34"
+  integrity sha512-rA0e43r5byYou98SIfS5TLw6ZuxYznTYvoqP5C99CSLy+J7/Elz7q44qUFR0o7EwHstszdPY28g7uj2qXTWAGQ==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-driving@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-driving/-/amap-js-api-driving-1.4.0.tgz#519cff06db034a4fdccc18ba0e84319518b6c05b"
+  integrity sha512-vv7qVo/blZFfnQSf4m0Q5NYfafnaqMbRcR6DghmTc/8L4ZwTlza2ABQBi8LnSbvy9N21PI+GYcnVCJ2I7E0Plw==
+  dependencies:
+    "@types/amap-js-api" "*"
+    "@types/amap-js-api-place-search" "*"
+
+"@types/amap-js-api-geocoder@*", "@types/amap-js-api-geocoder@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-geocoder/-/amap-js-api-geocoder-1.4.0.tgz#9b6efb7c30d283bdcbd512cb5901072e30912566"
+  integrity sha512-2lKX2vC5qhGP5uer+7aMmesO4PeTXDgI1HYG3r1/LeWmGMZ3a1vaxyk6c0shsiZp7+7orsgHtQHRsmtqFK5lFA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-geolocation@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-geolocation/-/amap-js-api-geolocation-1.4.0.tgz#e9fa852e33f88c5fc802efcdf1cd6a7ae88e3888"
+  integrity sha512-uQAWzmCksOZuuzUJw4DJ2B3Pw0qCA1P98ptnKSj4K7IdHxGqCnU33iIV3WgkdBNUnW0ijVt/nZZkV0u0X9aoBQ==
+  dependencies:
+    "@types/amap-js-api" "*"
+    "@types/amap-js-api-geocoder" "*"
+
+"@types/amap-js-api-heatmap@^1.4.0":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-heatmap/-/amap-js-api-heatmap-1.4.1.tgz#7109d206ad51b7d7346d788ea0d80a06e2c627a6"
+  integrity sha512-JJIPGsrbS/kAJMEfIdBOt0fz1T9raf32ddz9iG658Hq+uoGk/CjY1L6eWRQFzvrHHq3NQIPqKjQZTKSVZPXkHA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-indoor-map@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-indoor-map/-/amap-js-api-indoor-map-1.4.1.tgz#675907349d445770f66f5494d7b084da9007ff2c"
+  integrity sha512-w0wdMjB933BJmQM5qxkfMiSR3FxwGCqBhS426Vo3Kys+R9NGrJe7gtT1mR0vPpH9By2QaAFek+YGOxumKJJRtg==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-line-search@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-line-search/-/amap-js-api-line-search-1.4.0.tgz#fd2fbcd01d8ea0f6352f59a37f0e4c60d5c19a9d"
+  integrity sha512-qUCXYivC4L9LrcLwy1Q87JNuVDjzWm6qucbxyG7f/SXJ+JkxteveQF+VU7W3Lsmm5KU1biGOf4fPvJTl9hyPmQ==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-map-type@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-map-type/-/amap-js-api-map-type-1.4.0.tgz#3eb488c381b8c9375846353f3ed77ade4669c8d0"
+  integrity sha512-40zc6yNdCKnXYWr+qYMkAzyTiNEyjY5AbB6ZppkmBNKNtdEQ6riB/cZ2D2lmGa4bLhNdItgvjYl31zZzCKgEWA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-map3d@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-map3d/-/amap-js-api-map3d-1.4.0.tgz#830fea65683e9b7f2cf0f89028d502bdd659d0fa"
+  integrity sha512-QPE7vkBcmb7qTWXtu4HFjMV9ZFETfEXGjm4MfwuCbnlIkgxnXpEHrYjJUbKoLN35R/lz85vi16JH0UnOitjFpw==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-overview@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-overview/-/amap-js-api-overview-1.4.0.tgz#324827b0a7fc7a4c7835f1baf5b30f27b00182b7"
+  integrity sha512-L3OFrrBBYFHWJUM2M0SBgN/aXGQY/G5TqdST6gCSprymzogbRnLWIrJTjgWAQWA9rJXT3eMRA2AxspoRykQ/UA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-place-search@*", "@types/amap-js-api-place-search@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-place-search/-/amap-js-api-place-search-1.4.0.tgz#40da8038e333a433cab213fd60a68c531e869241"
+  integrity sha512-jvhjq3CEHeDYcL6Vib4G800Yy2YaQOZHqoCiDGGo/8wTyYLcLVicumfuka1AVuETYhApvf1P+OLH23prus/gIA==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-riding@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-riding/-/amap-js-api-riding-1.4.0.tgz#d909ccc3bdd8c31851138150f3d596745fe129ad"
+  integrity sha512-V9lstZTEv0pXCTOoan2JpwYatbDORSI4KKkM5rueuLNp/CrHVS8i1LVXukTRBEMp2rOxTHrNGnW5z84j39+MrQ==
+  dependencies:
+    "@types/amap-js-api" "*"
+    "@types/amap-js-api-place-search" "*"
+
+"@types/amap-js-api-scale@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-scale/-/amap-js-api-scale-1.4.0.tgz#0fa72065c28429d5f69953b68f31a932aeaeafb8"
+  integrity sha512-D02l+JnjB3MokFJtQ/S1FxnmLgsKLZcU2Gp+anuP27NTzcICYTmGnC5DZ6SfkGIIWDtwA9RT+b81lxNMO12HwQ==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-station-search@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-station-search/-/amap-js-api-station-search-1.4.0.tgz#f4c30278ada20e9bc6443aa01c436288a3a33660"
+  integrity sha512-pnc1tH+WHJnN0h0+4Ea/OQFq7votLCGWTG1OC9ytmFSfmTgVSoM7Rjfvrd6zQQ5qBXTgm+BwCY1WS4RasXMTfw==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api-tool-bar@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/@types/amap-js-api-tool-bar/-/amap-js-api-tool-bar-1.4.0.tgz#38b00665ddef5a95d22da82880c6e9e6aeddfbbc"
+  integrity sha512-p0LpmCmv8hotJZ3XDDRLeTdd82UOxQC/ghBZK+2FOX2ODZ3x15vIwZCAQyAsngX4bv4yhbU8DdMkLatYra6Log==
+  dependencies:
+    "@types/amap-js-api" "*"
+
+"@types/amap-js-api@*", "@types/amap-js-api@^1.4.7":
+  version "1.4.8"
+  resolved "https://registry.npmjs.org/@types/amap-js-api/-/amap-js-api-1.4.8.tgz#64a16fe9904b2907f800f2cf764ce3c6f878ddab"
+  integrity sha512-942O+waCI7eeA4oCTiHWJTUqX2mIOdzKxQvElR/Nef2MUQWE135W3HOjTAZ7Er1sPw2MnsFLJnyY8dfA8NW8IA==
+
 "@types/anymatch@*":
   version "1.3.1"
   resolved "https://registry.npmjs.org/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
@@ -2461,6 +2602,32 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
+
+amap-js-api-typings@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/amap-js-api-typings/-/amap-js-api-typings-1.0.1.tgz#f4c9e519042ff3600c9a8b2e350d5aff1c8fa5f6"
+  integrity sha512-tGldHL2epGNswWjNG26UtyN2MGCQprDqRpexC6oDEz/cZWtzcsbkhVxdWhiMbIFd6SikwiS6EWcC+Ej8r4Gnog==
+  dependencies:
+    "@types/amap-js-api" "^1.4.7"
+    "@types/amap-js-api-arrival-range" "^1.4.0"
+    "@types/amap-js-api-autocomplete" "^1.4.0"
+    "@types/amap-js-api-city-search" "^1.4.0"
+    "@types/amap-js-api-control-bar" "^1.4.0"
+    "@types/amap-js-api-district-search" "^1.4.0"
+    "@types/amap-js-api-driving" "^1.4.0"
+    "@types/amap-js-api-geocoder" "^1.4.0"
+    "@types/amap-js-api-geolocation" "^1.4.0"
+    "@types/amap-js-api-heatmap" "^1.4.0"
+    "@types/amap-js-api-indoor-map" "^1.4.1"
+    "@types/amap-js-api-line-search" "^1.4.0"
+    "@types/amap-js-api-map-type" "^1.4.0"
+    "@types/amap-js-api-map3d" "^1.4.0"
+    "@types/amap-js-api-overview" "^1.4.0"
+    "@types/amap-js-api-place-search" "^1.4.0"
+    "@types/amap-js-api-riding" "^1.4.0"
+    "@types/amap-js-api-scale" "^1.4.0"
+    "@types/amap-js-api-station-search" "^1.4.0"
+    "@types/amap-js-api-tool-bar" "^1.4.0"
 
 amdefine@>=0.0.4:
   version "1.0.1"

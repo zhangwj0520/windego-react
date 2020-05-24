@@ -15,45 +15,47 @@ const routes: Array<RouteConfig> = [
     // component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@pages/welcome')),
   },
   {
-    path: '/business',
-    name: '组件',
+    path: '/redux',
+    name: 'Redux',
     icon: 'icon-react',
     children: [
       {
-        path: '/business/manage',
-        name: 'demo',
-        component: loadable('demo'),
+        path: '/redux/countera',
+        name: 'counterA',
+        component: loadable('redux-demo/counter'),
       },
       {
-        path: '/business/counter',
-        name: 'counter',
-        component: loadable('counter'),
+        path: '/redux/counterb',
+        name: 'counterB',
+        component: loadable('redux-demo/counterb'),
       },
-
-      // {
-      //   path: '/business/effect',
-      //   name: '效果评估',
-      //   component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-      //   children: [
-      //     {
-      //       path: '/business/effect/newstoredetail',
-      //       name: '新店详情',
-      //       component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-      //       hideInMenu: true,
-      //     },
-      //     {
-      //       path: '/business/effect/oldstoredetail',
-      //       name: '老店详情',
-      //       component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-      //       hideInMenu: true,
-      //     },
-      //   ],
-      // },
-      // {
-      //   path: '/business/chart',
-      //   name: '统计报表',
-      //   component: lazy(() => import(/* webpackChunkName: "dashboard" */ '@src/pages/counter')),
-      // },
+    ],
+  },
+  {
+    path: '/amap',
+    name: 'amap',
+    icon: 'icon-react',
+    children: [
+      {
+        path: '/amap/polygon',
+        name: 'polygon',
+        component: loadable('amap/polygon'),
+      },
+      {
+        path: '/amap/navigate',
+        name: 'navigate',
+        component: loadable('amap/navigate'),
+      },
+      {
+        path: '/amap/trackPlayer',
+        name: 'trackplayer',
+        component: loadable('amap/trackPlayer'),
+      },
+      {
+        path: '/amap/circle',
+        name: 'circle',
+        component: loadable('amap/circle'),
+      },
     ],
   },
   // {

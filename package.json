@@ -84,5 +84,8 @@
       "pre-commit": "lint-staged -c lint-staged.config.js",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "devDependencies": {
+    "amap-js-api-typings": "^1.0.1"
   }
 }
