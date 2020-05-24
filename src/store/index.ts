@@ -21,9 +21,14 @@ function makeRootReducer<A, M extends ReducersMapObject<A>>(reducers?: M) {
   })
 }
 
+const middleware = getDefaultMiddleware()
+if (process.env.NODE_ENV === 'development') {
+  middleware.push(logger)
+}
+
 const store = configureStore({
   reducer: makeRootReducer(),
-  middleware: [...getDefaultMiddleware(), logger] as const,
+  middleware,
 })
 
 export const injectReducer = (name: string, reducer: Reducer) => {
