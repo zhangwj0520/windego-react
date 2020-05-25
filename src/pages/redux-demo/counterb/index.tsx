@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import redux from '@assets/images/redux.svg'
 // import { useSelector, useDispatch } from 'react-redux'
 import { useStore, useActions } from '@hooks/useStore'
@@ -13,6 +13,10 @@ function App() {
   const { increment, decrement, incrementByAmount, incrementAsync } = useActions(actions)
 
   const [incrementAmount, setIncrementAmount] = useState('2')
+
+  const ref = useRef(1)
+  console.log(ref.current)
+  ref.current = 2
 
   useInterval(() => {
     increment()
